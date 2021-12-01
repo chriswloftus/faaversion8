@@ -43,7 +43,7 @@ class CatsFragment : Fragment(), NumberPicker.OnValueChangeListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         catsFragmentBinding = FragmentCatsBinding.inflate(inflater, container, false)
 
         setupSearchFields()
