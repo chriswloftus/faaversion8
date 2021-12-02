@@ -1,8 +1,8 @@
 package uk.ac.aber.dcs.cs31620.faa
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.test.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
 import junit.framework.Assert.assertEquals
 import org.junit.After
 import org.junit.Before
@@ -14,9 +14,7 @@ import uk.ac.aber.dcs.cs31620.faa.datasource.RoomDatabaseI
 import uk.ac.aber.dcs.cs31620.faa.model.CatDao
 import uk.ac.aber.dcs.cs31620.faa.util.LiveDataTestUtil
 import uk.ac.aber.dcs.cs31620.faa.util.TestUtil
-import java.lang.Exception
 import java.time.LocalDateTime
-import kotlin.jvm.Throws
 
 @RunWith(AndroidJUnit4::class)
 class InsertCatTest {
@@ -32,7 +30,7 @@ class InsertCatTest {
     @Before
     @Throws(Exception::class)
     fun createDb() {
-        val context = InstrumentationRegistry.getTargetContext()
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
         db = Injection.getDatabase(context)
         catDao = db.catDao()
     }
